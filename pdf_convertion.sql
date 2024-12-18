@@ -69,9 +69,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`, `email`) VALUES
 (1, 'quanghai', 'hai123', 'quanghai@gmail.com'),
-(2, 'xuanninh', 'ninh456', 'xuanninh@gmail.com'),
-(6, 'chipheo', 'handoi', 'chaohanh@yahoo.com');
-
+(2, 'xuanninh', 'ninh456', 'xuanninh@gmail.com');
 --
 -- Chỉ mục cho các bảng đã đổ
 --
