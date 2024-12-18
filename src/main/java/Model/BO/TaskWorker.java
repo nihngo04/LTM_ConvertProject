@@ -1,7 +1,6 @@
 package Model.BO;
 
 import Model.Bean.Task;
-import Model.Bean.TaskQueue;
 import Model.DAO.FileConverter_DAO;
 
 import java.io.File;

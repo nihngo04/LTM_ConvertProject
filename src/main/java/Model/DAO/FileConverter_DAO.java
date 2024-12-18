@@ -123,4 +123,24 @@ public class FileConverter_DAO {
 		return null;
 	}
 
+	public static List<Task> getTasksByStatus(String status) {
+	    List<Task> tasks = new ArrayList<>();
+	    Database database = Database.getInstance();
+	    String query = "SELECT * FROM tasks WHERE status = ? ORDER BY id DESC";
+	    try (ResultSet rs = database.executeQuery(query, status)) {
+	        while (rs.next()) {
+	            Task task = new Task();
+	            task.setId(rs.getInt("id"));
+	            task.setUserId(rs.getInt("user_id"));
+	            task.setInputFilePath(rs.getString("input_file_path"));
+	            task.setOutputFilePath(rs.getString("output_file_path"));
+	            task.setStatus(rs.getString("status"));
+	            tasks.add(task);
+	        }
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	    return tasks;
+	}
+
 }
